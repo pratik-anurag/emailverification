@@ -19,7 +19,7 @@ for c in cm.find({'$or':[{'isvalid':{'$exists':False}},{'isvalid':'false'}]},{'e
             # print(c['email']+' is '+response.body['result'])
             # print('----------------------------------------')
             # print('updating the collection with flags isvalid as true')
-            cm.update_one({'email':c['email']}, verified_col)
+            cm.update_one({'_id':c['_id']}, verified_col)
         else:
             # print('----------------------------------------')
             # print('updating the collection with flags isvalid as false')
